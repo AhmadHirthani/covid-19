@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <% allcountries.forEach(country=>{ %>
+            <div class="allcountrycard">
+
+                <h3>Country:
+                    <%= country.Country %>
+                </h3>
+
+                <h3>CountryCode:
+                    <%= country.CountryCode %>
+                </h3>
+
+                <h3>Slug:
+                    <%= country.Slug %>
+                </h3>
+
+
+                <h3>NewConfirmed:
+                    <%= country.NewConfirmed %>
+                </h3>
+                <h3>TotalConfirmed:
+                    <%= country.TotalConfirmed %>
+                </h3>
+                <h3>NewDeaths:
+                    <%= country.NewDeaths %>
+                </h3>
+                <h3>TotalDeaths:
+                    <%= country.TotalDeaths %>
+                </h3>
+                <h3>NewRecovered:
+                    <%= country.NewRecovered %>
+                </h3>
+                <h3>TotalRecovered:
+                    <%= country.TotalRecovered %>
+                </h3>
+
+                <h3>Date:
+                    <%= country.Date %>
+                </h3>
+
+                <h3>Premium:
+                    <%= country.Premium %>
+                </h3>
+
+                <form action="/myrecord" method="POST">
+
+                    <input type="hidden" id="Country" name="Country" value="<%= country.Country %>">
+                    <input type="hidden" id="CountryCode" name="CountryCode" value="<%= country.CountryCode %>">
+                    <input type="hidden" id="Slug" name="Slug" value="<%= country.Slug %>">
+                    <input type="hidden" id="NewConfirmed" name="NewConfirmed" value="<%= country.NewConfirmed %>">
+                    <input type="hidden" id="TotalConfirmed" name="TotalConfirmed" value="<%= country.TotalConfirmed %>">
+                    <input type="hidden" id="NewDeaths" name="NewDeaths" value="<%= country.NewDeaths %>">
+                    <input type="hidden" id="TotalDeaths" name="TotalDeaths" value="<%= country.TotalDeaths %>">
+                    <input type="hidden" id="NewRecovered" name="NewRecovered" value="<%= country.NewRecovered %>">
+                    <input type="hidden" id="TotalRecovered" name="TotalRecovered" value="<%= country.TotalRecovered %>">
+                    <input type="hidden" id="Date" name="Date" value="<%= country.Date %>">
+                    <input type="hidden" id="Premium" name="Premium" value="<%= country.Premium %>">
+
+                    <input type="submit" id="submitbutton" name="submitbutton" value="add to my record">
+
+                </form>
+
+
+            </div>
+
+            <%  }) %>
+
+
+    </div>
+</body>
+
+</html>

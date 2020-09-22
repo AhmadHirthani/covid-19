@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <% if(myrecord.length==0){ %>
+        <h2>No data in your record</h2>
+        <% } else { %>
+            <div id="container">
+                <% myrecord.forEach(country=>{ %>
+
+                    <div class="allcountrycard">
+
+                        <h3>Country:
+                            <%= country.id %>
+                        </h3>
+
+                        <h3>Country:
+                            <%= country.country %>
+                        </h3>
+
+                        <h3>CountryCode:
+                            <%= country.countrycode %>
+                        </h3>
+
+                        <h3>Slug:
+                            <%= country.slug %>
+                        </h3>
+
+
+                        <h3>NewConfirmed:
+                            <%= country.newconfirmed %>
+                        </h3>
+                        <h3>TotalConfirmed:
+                            <%= country.totalconfirmed %>
+                        </h3>
+                        <h3>NewDeaths:
+                            <%= country.newdeaths %>
+                        </h3>
+                        <h3>TotalDeaths:
+                            <%= country.totaldeaths %>
+                        </h3>
+                        <h3>NewRecovered:
+                            <%= country.newrecovered %>
+                        </h3>
+                        <h3>TotalRecovered:
+                            <%= country.totalrecovered %>
+                        </h3>
+
+                        <h3>Date:
+                            <%= country.date %>
+                        </h3>
+
+                        <h3>Premium:
+                            <%= country.premium %>
+                        </h3>
+
+                        <form action="/update/<%= country.id %>?_method=PUT" method="POST">
+                            <input type="text" id="Country" name="Country" value="<%= country.id %>">
+
+
+                            <input type="text" id="Country" name="Country" value="<%= country.country %>">
+                            <input type="text" id="CountryCode" name="CountryCode" value="<%= country.countrycode %>">
+                            <input type="text" id="Slug" name="Slug" value="<%= country.Slug %>">
+                            <input type="text" id="NewConfirmed" name="NewConfirmed" value="<%= country.newconfirmed %>">
+                            <input type="text" id="TotalConfirmed" name="TotalConfirmed" value="<%= country.totalconfirmed %>">
+                            <input type="text" id="NewDeaths" name="NewDeaths" value="<%= country.newdeaths %>">
+                            <input type="text" id="TotalDeaths" name="TotalDeaths" value="<%= country.totaldeaths %>">
+                            <input type="text" id="NewRecovered" name="NewRecovered" value="<%= country.newrecovered %>">
+                            <input type="text" id="TotalRecovered" name="TotalRecovered" value="<%= country.totalrecovered %>">
+                            <input type="text" id="Date" name="Date" value="<%= country.date %>">
+                            <input type="text" id="Premium" name="Premium" value="<%= country.premium %>">
+
+                            <input type="submit" id="submitbutton" name="submitbutton" value="update">
+
+                        </form>
+
+                        <form action="/delete/<%= country.id %>?_method=delete" method="POST">
+                            <input type="submit" id="submitbutton" name="submitbutton" value="delete">
+
+                        </form>
+
+
+                    </div>
+
+
+
+
+
+
+                    <%  })} %>
+
+
+            </div>
+</body>
+
+</html>
