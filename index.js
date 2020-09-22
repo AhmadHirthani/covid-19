@@ -70,7 +70,7 @@ function handleDelete(req, res) {
     values[0] = id;
     console.log(' values >>', values);
 
-    let sql = `delete from covid19 where id=$1;`;
+    let sql = `delete from covid19 where id=${id};`;
     client.query(sql, values).then(data => {
         console.log('data: ', data.rows);
 
