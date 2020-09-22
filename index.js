@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 // app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 const client = new pg.Client(process.env.DATABASE_URL);
-const port = process.env.port;
+const port = process.env.PORT;
 // console.log({ client });
 
 
